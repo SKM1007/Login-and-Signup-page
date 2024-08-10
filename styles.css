@@ -1,0 +1,178 @@
+/* Import the Million Orchids font */
+@import url('https://fonts.googleapis.com/css2?family=Million+Orchids&display=swap');
+
+body {
+  font-family: 'Million Orchids', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-image: url('blueimg.jpg'); /* Path to your background image */
+  background-size: cover; /* Cover the entire body area */
+  background-position: center; /* Center the background image */
+  background-color: #f2f2f2; /* Fallback color if the image doesn't load */
+}
+
+button {
+  background-color: #c26ae2;
+  color: white;
+  padding: 14px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px; 
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #e4bae3;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.4); /* Black with opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box with background image */
+.modal-content {
+  background-image: url('oldvintage.jpg'); /* Path to your background image for the modal */
+  background-size: cover; /* Cover the entire modal content area */
+  background-position: center; /* Center the background image */
+  background-color: rgba(255, 255, 255, 0.8); /* White background with some opacity */
+  margin: 5% auto; /* 5% from the top and centered */
+  border: 1px solid #888;
+  width: 350px; /* Increased width */
+  height: auto; /* Height will adjust based on content */
+  max-height: 600px; /* Increased maximum height */
+  border-radius: 15px; /* Rounded corners for the modal */
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
+  overflow-y: hidden; /* Hide scroll if not needed */
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  color: #000;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+/* Close button on hover */
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)}
+  to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom {
+  from {transform: scale(0)}
+  to {transform: scale(1)}
+}
+
+/* Container for the avatar */
+.imgcontainer {
+  text-align: center;
+  margin: 16px 0 12px 0;
+}
+
+/* Avatar image */
+.avatar {
+  width: 20%;
+  border-radius: 20%;
+}
+
+/* Username and Password input fields */
+.container {
+  padding: 16px;
+}
+
+.container input[type=text], .container input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 8px; /* Rounded corners for input fields */
+}
+
+/* Login button inside modal */
+.container button[type=submit] {
+  background-color: #2a8fe8;
+  color: white;
+  padding: 10px 16px; /* Smaller size compared to input fields */
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%; /* Full width */
+  border-radius: 8px; /* Rounded corners */
+  display: block;
+}
+
+/* Sign Up button inside modal */
+.signup {
+  background-color: #c26ae2;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  cursor: pointer;
+  width: 100%; /* Full width */
+  border-radius: 8px; /* Rounded corners */
+}
+
+.signup:hover {
+  background-color: #e4bae3;
+}
+
+/* Align text to the left */
+.container .text-links {
+  text-align: left;
+  padding-top: 8px;
+  font-size: 14px;
+}
+
+/* Highlight the "Don't you have an account?" and "Already have an account?" links */
+.container .text-links span {
+  display: block; /* Ensure each link is on a new line */
+  margin-bottom: 8px;
+}
+
+.container .text-links a {
+  color: #2053d3;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.container .text-links a:hover {
+  color: #2929c9;
+  text-decoration: underline;
+}
+
+/* Background color for the lower container */
+.container.bg-light {
+  background-color: #f1f1f1;
+  border-radius: 0 0 15px 15px; /* Rounded corners only on bottom */
+  padding-bottom: 16px;
+}
