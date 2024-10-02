@@ -1,178 +1,174 @@
-/* Import the Million Orchids font */
-@import url('https://fonts.googleapis.com/css2?family=Million+Orchids&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #1877f2;
+    --primary-hover: #166fe5;
+    --text-color: #050505;
+    --background-color: rgba(255, 255, 255, 0.95);
+    --border-color: #dddfe2;
+}
 
 body {
-  font-family: 'Million Orchids', sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-  background-image: url('blueimg.jpg'); /* Path to your background image */
-  background-size: cover; /* Cover the entire body area */
-  background-position: center; /* Center the background image */
-  background-color: #f2f2f2; /* Fallback color if the image doesn't load */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('themepic.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.container {
+    background-color: var(--background-color);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    padding: 40px;
+    margin: 20px;
+    transition: transform 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+}
+
+h2 {
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    text-align: center;
+    font-size: 28px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    position: relative;
+}
+
+input {
+    width: 100%;
+    padding: 12px 16px;
+    margin: 8px 0;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(24, 119, 242, 0.2);
 }
 
 button {
-  background-color: #c26ae2;
-  color: white;
-  padding: 14px 20px;
-  border: none;
-  cursor: pointer;
-  border-radius: 8px; 
-  font-size: 16px;
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 10px 0;
 }
 
 button:hover {
-  background-color: #e4bae3;
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
 }
 
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgba(0,0,0,0.4); /* Black with opacity */
-  padding-top: 60px;
+button:active {
+    transform: translateY(0);
 }
 
-/* Modal Content/Box with background image */
-.modal-content {
-  background-image: url('oldvintage.jpg'); /* Path to your background image for the modal */
-  background-size: cover; /* Cover the entire modal content area */
-  background-position: center; /* Center the background image */
-  background-color: rgba(255, 255, 255, 0.8); /* White background with some opacity */
-  margin: 5% auto; /* 5% from the top and centered */
-  border: 1px solid #888;
-  width: 350px; /* Increased width */
-  height: auto; /* Height will adjust based on content */
-  max-height: 600px; /* Increased maximum height */
-  border-radius: 15px; /* Rounded corners for the modal */
-  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
-  overflow-y: hidden; /* Hide scroll if not needed */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-/* The Close Button */
-.close {
-  position: absolute;
-  right: 20px;
-  top: 15px;
-  color: #000;
-  font-size: 30px;
-  font-weight: bold;
+a:hover {
+    color: var(--primary-hover);
+    text-decoration: underline;
 }
 
-/* Close button on hover */
-.close:hover,
-.close:focus {
-  color: red;
-  cursor: pointer;
+p {
+    text-align: center;
+    margin: 15px 0;
+    color: #65676b;
 }
 
-/* Add Zoom Animation */
-.animate {
-  -webkit-animation: animatezoom 0.6s;
-  animation: animatezoom 0.6s
+#profile {
+    text-align: center;
 }
 
-@-webkit-keyframes animatezoom {
-  from {-webkit-transform: scale(0)}
-  to {-webkit-transform: scale(1)}
+#profilePicture {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 20px auto;
+    display: block;
+    border: 3px solid var(--primary-color);
+    transition: transform 0.3s ease;
 }
 
-@keyframes animatezoom {
-  from {transform: scale(0)}
-  to {transform: scale(1)}
+#profilePicture:hover {
+    transform: scale(1.05);
 }
 
-/* Container for the avatar */
-.imgcontainer {
-  text-align: center;
-  margin: 16px 0 12px 0;
+#logoutButton {
+    background-color: #e4e6eb;
+    color: var(--text-color);
 }
 
-/* Avatar image */
-.avatar {
-  width: 20%;
-  border-radius: 20%;
+#logoutButton:hover {
+    background-color: #d8dadf;
 }
 
-/* Username and Password input fields */
-.container {
-  padding: 16px;
+.hidden {
+    display: none;
 }
 
-.container input[type=text], .container input[type=password] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-  border-radius: 8px; /* Rounded corners for input fields */
+.form-section {
+    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-/* Login button inside modal */
-.container button[type=submit] {
-  background-color: #2a8fe8;
-  color: white;
-  padding: 10px 16px; /* Smaller size compared to input fields */
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%; /* Full width */
-  border-radius: 8px; /* Rounded corners */
-  display: block;
+.form-section.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
 }
 
-/* Sign Up button inside modal */
-.signup {
-  background-color: #c26ae2;
-  color: white;
-  padding: 10px 16px;
-  border: none;
-  cursor: pointer;
-  width: 100%; /* Full width */
-  border-radius: 8px; /* Rounded corners */
+.loading {
+    position: relative;
+    pointer-events: none;
 }
 
-.signup:hover {
-  background-color: #e4bae3;
-}
-
-/* Align text to the left */
-.container .text-links {
-  text-align: left;
-  padding-top: 8px;
-  font-size: 14px;
-}
-
-/* Highlight the "Don't you have an account?" and "Already have an account?" links */
-.container .text-links span {
-  display: block; /* Ensure each link is on a new line */
-  margin-bottom: 8px;
-}
-
-.container .text-links a {
-  color: #2053d3;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.container .text-links a:hover {
-  color: #2929c9;
-  text-decoration: underline;
-}
-
-/* Background color for the lower container */
-.container.bg-light {
-  background-color: #f1f1f1;
-  border-radius: 0 0 15px 15px; /* Rounded corners only on bottom */
-  padding-bottom: 16px;
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
 }
