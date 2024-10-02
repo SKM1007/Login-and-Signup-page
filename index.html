@@ -1,73 +1,83 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Login Form</title>
-  <link rel="stylesheet" href="styles.css"> <!-- Link to the CSS file -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login, Profile, and Password Reset</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-<!-- Button to open the modal login form -->
-<button onclick="document.getElementById('id01').style.display='block'">Login</button>
-
-<!-- The Modal for Login -->
-<div id="id01" class="modal">
-  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-
-  <!-- Modal Content -->
-  <form class="modal-content animate" action="/action_page.php">
-    <div class="imgcontainer">
-      <img src="Batman-Logo.jpg" alt="Avatar" class="avatar">
-    </div>
-
     <div class="container">
-      <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>
-
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
-
-      <button type="submit">Login</button>
-    </div>
-
-    <div class="container bg-light">
-      <div class="text-links">
-        <span><a href="#" onclick="document.getElementById('id02').style.display='block'; document.getElementById('id01').style.display='none'">Forgot password?</a></span><br>
-        <span>Don't you have an account? <a href="#" onclick="document.getElementById('id02').style.display='block'; document.getElementById('id01').style.display='none'">Sign up</a></span>
-      </div>
-    </div>
-  </form>
-</div>
-
-<!-- The Modal for Sign Up -->
-<div id="id02" class="modal">
-  <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
-  <form class="modal-content" action="/action_page.php">
-    <div class="container">
-      <h1>Sign Up</h1>
-      <hr>
-
-      <label for="email"><b>Email</b></label>
-      <input type="text" placeholder="Enter Email" name="email" required>
-
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
-
-      <label for="psw-repeat"><b>Repeat Password</b></label>
-      <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
-
-      <div class="container bg-light">
-        <div class="text-links">
-          <span><a href="#" onclick="document.getElementById('id01').style.display='block'; document.getElementById('id02').style.display='none'">Forgot password?</a></span><br>
-          <span>Already have an account? <a href="#" onclick="document.getElementById('id01').style.display='block'; document.getElementById('id02').style.display='none'">Login</a></span>
+        <!-- Login Form -->
+        <div id="login" class="form-section active">
+            <h2>Welcome Back</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <input type="text" id="loginUsername" placeholder="Username" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="loginPassword" placeholder="Password" required>
+                </div>
+                <button type="submit">Sign In</button>
+            </form>
+            <p><a href="#" id="forgotPasswordLink">Forgot Password?</a></p>
+            <p>Don't have an account? <a href="#" id="showRegisterForm">Register Here</a></p>
         </div>
-        <div class="clearfix">
-          <button type="submit" class="signup">Sign Up</button>
-        </div>
-      </div>
-    </div>
-  </form>
-</div>
 
+        <!-- Registration Form -->
+        <div id="register" class="form-section">
+            <h2>Create Account</h2>
+            <form id="registerForm">
+                <div class="form-group">
+                    <input type="text" id="registerUsername" placeholder="Username" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="registerEmail" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="registerPassword" placeholder="Password" required>
+                </div>
+                <button type="submit">Register</button>
+            </form>
+            <p><a href="#" id="backToLoginFromRegister">Back to Login</a></p>
+        </div>
+
+        <!-- Profile Section -->
+        <div id="profile" class="form-section">
+            <h2>Your Profile</h2>
+            <img id="profilePicture" src="default-avatar.jpg" alt="Profile Picture">
+            <p><strong>Username:</strong> <span id="profileUsername"></span></p>
+            <p><strong>Email:</strong> <span id="profileEmail"></span></p>
+            <p><strong>Bio:</strong> <span id="profileBio"></span></p>
+            <button id="editProfileBtn">Edit Profile</button>
+            <button id="logoutButton">Logout</button>
+
+            <div id="editProfileForm" class="hidden">
+                <div class="form-group">
+                    <input type="email" id="editEmail" placeholder="New Email">
+                </div>
+                <div class="form-group">
+                    <input type="text" id="editBio" placeholder="New Bio">
+                </div>
+                <button id="saveProfileChanges">Save Changes</button>
+            </div>
+
+            <button id="changePictureBtn">Change Profile Picture</button>
+            <input type="file" id="profilePictureInput" accept="image/*" class="hidden">
+        </div>
+
+        <!-- Reset Password Section -->
+        <div id="resetPassword" class="form-section">
+            <h2>Reset Password</h2>
+            <form id="resetForm">
+                <div class="form-group">
+                    <input type="email" id="resetEmail" placeholder="Email" required>
+                </div>
+                <button type="submit">Send Reset Link</button>
+            </form>
+            <p><a href="#" id="backToLogin">Back to Login</a></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
